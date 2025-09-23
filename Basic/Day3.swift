@@ -19,7 +19,7 @@ struct TodoListview: View {
             HStack{
                 TextField("Enter a new Task Text", text: $newTask).textFieldStyle(RoundedBorderTextFieldStyle()).padding()
                 
-                Button(action: , "New Task"): {
+                Button(action: {
                     
                     if !newTask.isEmpty {
                         tasks.append(newTask)
@@ -29,7 +29,7 @@ struct TodoListview: View {
                 { Text("Add Task")
                     
                 }.padding(.horizontal)
-                 .padding(vertical, 8)
+                    .padding(.vertical, 8)
                 
             }
         }

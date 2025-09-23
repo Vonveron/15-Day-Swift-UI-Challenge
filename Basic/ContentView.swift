@@ -101,7 +101,9 @@ struct SecondPage: View {
                 VStack(spacing: 20) {
                     // Header
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Business Logo, Business Text")
+                        Text(" Business Logo").font(.title.bold())
+
+                        Text("Business Title, Business Text")
                             .font(.title.bold())
                         Text(Date().formatted(date: .abbreviated, time: .complete))
                             .font(.subheadline)
@@ -110,7 +112,21 @@ struct SecondPage: View {
                         Divider()
                     }
                     .padding(.horizontal)
+                    
+                    NavigationStack {
+                        VStack {
+                            // Make this first "Task Manager" clickable
+                            NavigationLink(destination: TodoListview()) {
+                                Text("Task Manager")
+                                    .font(.headline)
+                                    .foregroundColor(.red)
+                            }
 
+                            // ... other content ...
+                        }
+                        .navigationTitle("") // keep system nav title empty
+                    }
+                    
                     // Grid of color tiles (2 columns)
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(colorOptions) { option in
@@ -122,7 +138,7 @@ struct SecondPage: View {
                                         .frame(height: 100)
                                     Text(option.name)
                                         .font(.headline)
-                                        // Choose readable text color based on luminance
+                                    // Choose readable text color based on luminance
                                         .foregroundColor(option.uiColor.isLight ? .black : .white)
                                         .shadow(radius: 1)
                                 }
@@ -130,7 +146,7 @@ struct SecondPage: View {
                         }
                     }
                     .padding(.horizontal)
-
+                    
                     // Simple list of fruits (not a List inside the grid)
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Fruits")
@@ -144,15 +160,14 @@ struct SecondPage: View {
                                 .padding(.horizontal)
                         }
                     }
-
+                    
                     Spacer(minLength: 20)
                 }
                 .padding(.vertical)
             }
-            .navigationTitle("Business Dashboard")
         }
-    }
-}
+            }
+            }
 
 struct ColorDetailView: View {
     let option: ColorOption
