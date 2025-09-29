@@ -9,14 +9,13 @@ import SwiftUI
 
 struct TodoListview: View {
     // 1. State to store the current text input
-    @State private var tasks: [String] = [ ]
+    @State private var tasks: [String] = UserDefaults.standard.stringArray(forKey: "tasks") ?? []
     // 2. State to store the list of tasks
     @State private var newTask: String = ""
 
     var body: some View {
         
         VStack {
-            
             HStack{
                 
                 TextField("Enter a new Task", text: $newTask).textFieldStyle(RoundedBorderTextFieldStyle()).padding()
@@ -45,6 +44,10 @@ struct TodoListview: View {
             }
             Spacer()
         } .padding()
+    }
+    private func saveTasks() {
+        UserDefaults.standard.set(tasks, forKey: "tasks")
+    
     }
     private func deleteTask(offsets: IndexSet) {
         tasks.remove(atOffsets: offsets)
