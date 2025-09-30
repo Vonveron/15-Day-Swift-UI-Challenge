@@ -37,7 +37,7 @@ struct ContentView: View {
 
 let Options: [Color] = [.red, .blue, .indigo, .green,]
 
-let fruits = ["Apple", "Banana", "Cherry", "Grape", "Orange"]
+let products = ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"]
 
 let country = ["Jam", "Usa", "Col", "Bzl","UYU"]
 
@@ -65,7 +65,7 @@ struct FirstPage: View {
                             .padding()
                         // Cannont have one body view inside of another!!
                         
-                        List(fruits, id: \.self) { fruit in
+                        List(products, id: \.self) { fruit in
                             Text(fruit)
                         }
                         .frame(height: 200)
@@ -91,8 +91,7 @@ struct SecondPage: View {
         ColorOption(name: "Media 3", color: .indigo, uiColor: .systemIndigo),
         ColorOption(name: "Media 4",  color: .green,  uiColor: .systemGreen)
     ]
-
-    let fruits = ["Apple", "Banana", "Cherry", "Grape", "Orange"]
+    let products = ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"]
     let columns = [ GridItem(.flexible()), GridItem(.flexible()) ]
 
     var body: some View {
@@ -117,7 +116,7 @@ struct SecondPage: View {
                         VStack {
                             // Make this first "Task Manager" clickable
                             NavigationLink(destination: TodoListview()) {
-                                Text("Task Manager")
+                                Text("ToDo List")
                                     .font(.headline)
                                     .foregroundColor(.red)
                             }
@@ -149,11 +148,11 @@ struct SecondPage: View {
                     
                     // Simple list of fruits (not a List inside the grid)
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Fruits")
+                        Text("Products")
                             .font(.headline)
                             .padding(.horizontal)
-                        ForEach(fruits, id: \.self) { fruit in
-                            Text(fruit)
+                        ForEach(products, id: \.self) { product in
+                            Text(product)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
                                 .background(RoundedRectangle(cornerRadius: 8).fill(.thinMaterial))
