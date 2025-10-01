@@ -165,8 +165,8 @@ struct SecondPage: View {
                 .padding(.vertical)
             }
         }
-            }
-            }
+    }
+}
 
 struct ColorDetailView: View {
     let option: ColorOption

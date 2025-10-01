@@ -43,7 +43,12 @@ struct TodoListview: View {
                 .onDelete(perform: deleteTask)
             }
             Spacer()
-        } .padding()
+            NavigationLink(destination: Day4()) {
+                Text("Weather").bold()
+                    .foregroundColor(.red)
+            }.padding()
+        }.padding()
+        
     }
     private func saveTasks() {
         UserDefaults.standard.set(tasks, forKey: "tasks")
