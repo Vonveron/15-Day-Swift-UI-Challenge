@@ -43,10 +43,6 @@ struct TodoListview: View {
                 .onDelete(perform: deleteTask)
             }
             Spacer()
-            NavigationLink(destination: Day4()) {
-                Text("Weather").bold()
-                    .foregroundColor(.red)
-            }.padding()
         }.padding()
         
     }

@@ -11,15 +11,39 @@ struct Day4: View {
         
     var body: some View {
         
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).padding().background(
-                RoundedRectangle(cornerRadius: 100)
-                    .fill(Color.green)).foregroundColor(.yellow)
-                .frame(width: 175, height: 200)
-                .shadow(radius: 5).padding()
-            
-        Text("Weather Test, 24°C")
-        (Image(systemName: "sun.max"))
-
+        VStack{
+            ScrollView(.horizontal) {
+                HStack{
+                    VStack {
+                        Text("Montevideo, 20°C").bold().padding().background(
+                            RoundedRectangle(cornerRadius: 31)
+                                .fill(Color.blue)).foregroundColor(.yellow)
+                            .frame(width: 200, height: 25)
+                            .shadow(radius: 5).padding()
+                        (Image(systemName: "sun.max").bold())
+                    }
+                    VStack{
+                        Text("Miami, 24°C").bold().padding().background(
+                            RoundedRectangle(cornerRadius: 31)
+                                .fill(Color.blue)).foregroundColor(.yellow)
+                            .frame(width: 200, height: 25)
+                            .shadow(radius: 5).padding()
+                        (Image(systemName: "sun.max").bold())
+                        
+                    }
+                    
+                    VStack{
+                        Text("PEI, 24°C").bold().padding().background(
+                            RoundedRectangle(cornerRadius: 31)
+                                .fill(Color.blue)).foregroundColor(.yellow)
+                            .frame(width: 200, height: 25)
+                            .shadow(radius: 5).padding()
+                        (Image(systemName: "sun.max").bold())
+                        
+                    }
+                }
+            }//.padding(250)
+        }
     }
 }
 

@@ -37,7 +37,7 @@ struct ContentView: View {
 
 let Options: [Color] = [.red, .blue, .indigo, .green,]
 
-let products = ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"]
+let products = ["Product I", "Product II", "Product III", "Product IV", "Product V"]
 
 let country = ["Jam", "Usa", "Col", "Bzl","UYU"]
 
@@ -91,7 +91,8 @@ struct SecondPage: View {
         ColorOption(name: "Media 3", color: .indigo, uiColor: .systemIndigo),
         ColorOption(name: "Media 4",  color: .green,  uiColor: .systemGreen)
     ]
-    let products = ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"]
+    let products = ["Product I", "Product II", "Product III", "Product IV", "Product V"]
+
     let columns = [ GridItem(.flexible()), GridItem(.flexible()) ]
 
     var body: some View {
@@ -114,14 +115,19 @@ struct SecondPage: View {
                     
                     NavigationStack {
                         VStack {
-                            // Make this first "Task Manager" clickable
-                            NavigationLink(destination: TodoListview()) {
-                                Text("ToDo List")
-                                    .font(.headline)
-                                    .foregroundColor(.red)
+                            HStack{
+                                // Make this first "Task Manager" clickable
+                                NavigationLink(destination: TodoListview()) {
+                                    Text("ToDo List")
+                                        .font(.headline)
+                                        .foregroundColor(.red)
+                                }.padding()
+                                
+                                NavigationLink(destination: Day4()) {
+                                    Text("Weather").bold()
+                                        .foregroundColor(.green)
+                                }//.padding(25)
                             }
-
-                            // ... other content ...
                         }
                         .navigationTitle("") // keep system nav title empty
                     }
