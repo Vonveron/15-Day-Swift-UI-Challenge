@@ -42,7 +42,7 @@ struct Day4: View {
                         
                     }
                 }
-            }//.padding(250)
+            }
         }
     }
 }
