@@ -116,7 +116,7 @@ struct SecondPage: View {
                     NavigationStack {
                         VStack {
                             HStack{
-                                // Make this first "Task Manager" clickable
+                                // Make this first "ToDoList" clickable
                                 NavigationLink(destination: TodoListview()) {
                                     Text("ToDo List")
                                         .font(.headline)
@@ -126,7 +126,12 @@ struct SecondPage: View {
                                 NavigationLink(destination: Day4()) {
                                     Text("Weather").bold()
                                         .foregroundColor(.green)
-                                }//.padding(25)
+                                }.padding()
+                                NavigationLink(destination: Day5()) {
+                                    Text("Timer").bold()
+                                        .foregroundColor(.blue)
+                                }.padding()
+                                
                             }
                         }
                         .navigationTitle("") // keep system nav title empty

@@ -15,7 +15,7 @@ struct Day4: View {
             ScrollView(.horizontal) {
                 HStack{
                     VStack {
-                        Text("Montevideo, 20°C").bold().padding().background(
+                        Text("Montevideo, 25°C").bold().padding().background(
                             RoundedRectangle(cornerRadius: 31)
                                 .fill(Color.blue)).foregroundColor(.yellow)
                             .frame(width: 200, height: 25)
@@ -23,7 +23,7 @@ struct Day4: View {
                         (Image(systemName: "sun.max").bold())
                     }
                     VStack{
-                        Text("Miami, 24°C").bold().padding().background(
+                        Text("Miami, 35°C").bold().padding().background(
                             RoundedRectangle(cornerRadius: 31)
                                 .fill(Color.blue)).foregroundColor(.yellow)
                             .frame(width: 200, height: 25)
@@ -33,7 +33,7 @@ struct Day4: View {
                     }
                     
                     VStack{
-                        Text("PEI, 24°C").bold().padding().background(
+                        Text("PEI, °15").bold().padding().background(
                             RoundedRectangle(cornerRadius: 31)
                                 .fill(Color.blue)).foregroundColor(.yellow)
                             .frame(width: 200, height: 25)

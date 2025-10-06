@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct Day5: View {
+    
+    let timer = Timer.publish(every: 1, on: RunLoop.main, in: .default).autoconnect()
+    //(timer in Timer; print("Seconds now" .timer))
+
     var body: some View {
         Text("0.0s")
-        Timer.publish(every: 1, on: main, in: .default).autoconnect()
         
     }
 }
