@@ -10,9 +10,9 @@ import SwiftUI
 struct Day5: View {
     
     @State private var secondsElapsed = 0
-    
+    @State private var timerConnection: Cancellable?
+    @State private var isRunning = false
     let Counter = Timer.publish(every: 1, on: RunLoop.main, in: .common).autoconnect()
-    //for each : Counter.Output in(Counter; print("Seconds now" .Timer))
 
     var body: some View {
         VStack {
@@ -22,6 +22,16 @@ struct Day5: View {
                             .font(.largeTitle)
                             .bold()
                             .padding()
+            HStack {
+                Button(isRunning ? "Pause" : "Start") {
+                    if isRunning {
+                        timerConnection?.cancel()
+                    } else {
+                        timerConnection = Counter.connect
+                                            }
+                }
+            }
+            
             
         }.onReceive(Counter) { _ in
             secondsElapsed += 1
