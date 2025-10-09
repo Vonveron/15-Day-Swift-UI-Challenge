@@ -9,12 +9,24 @@ import SwiftUI
 
 struct Day5: View {
     
-    let timer = Timer.publish(every: 1, on: RunLoop.main, in: .default).autoconnect()
-    //(timer in Timer; print("Seconds now" .timer))
+    @State private var secondsElapsed = 0
+    
+    let Counter = Timer.publish(every: 1, on: RunLoop.main, in: .common).autoconnect()
+    //for each : Counter.Output in(Counter; print("Seconds now" .Timer))
 
     var body: some View {
-        Text("0.0s")
-        
+        VStack {
+            Text("⏱️ Seconds Elapsed").bold()
+            
+            Text("\(secondsElapsed)")
+                            .font(.largeTitle)
+                            .bold()
+                            .padding()
+            
+        }.onReceive(Counter) { _ in
+            secondsElapsed += 1
+            
+        }
     }
 }
 
