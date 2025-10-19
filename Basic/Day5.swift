@@ -6,30 +6,33 @@
 //
 
 import SwiftUI
+import Combine
 
 struct Day5: View {
     
     @State private var secondsElapsed = 0
-    @State private var timerConnection: Cancellable?
     @State private var isRunning = false
-    let Counter = Timer.publish(every: 1, on: RunLoop.main, in: .common).autoconnect()
+    @State private var timerConnection: Cancellable?
+
+    let Counter = Timer.publish(every: 1, on: RunLoop.main, in: .common)
 
     var body: some View {
         VStack {
             Text("⏱️ Seconds Elapsed").bold()
             
-            Text("\(secondsElapsed)")
-                            .font(.largeTitle)
-                            .bold()
-                            .padding()
+            Text("\(secondsElapsed)").font(.largeTitle).bold().padding()
+            
+            
             HStack {
                 Button(isRunning ? "Pause" : "Start") {
                     if isRunning {
                         timerConnection?.cancel()
                     } else {
-                        timerConnection = Counter.connect
-                                            }
+                        timerConnection = Counter.connect()
+                    }
+                    isRunning.toggle()
                 }
+                .buttonStyle(.borderedProminent)
             }
             
             
