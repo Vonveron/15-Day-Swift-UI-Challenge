@@ -1,18 +1,27 @@
+////
+////  Day6.swift
+////  Basic
+////
+////  Created by Parrié on 22-10-2025.
+////
 //
-//  Day6.swift
-//  Basic
+//import SwiftUI
 //
-//  Created by Parrié on 22-10-2025.
+//struct Habit: View {
+//    
+//    var title: String
+//    var isDone: Bool
+//    
+//    var body: some View {
+//        
 //
-
-import SwiftUI
-
-struct Day6: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    Day6()
-}
+//        
+//        
+//    }
+//}
+//
+//
+//
+//#Preview {
+//    Habit()
+//}
