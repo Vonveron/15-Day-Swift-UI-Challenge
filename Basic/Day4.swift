@@ -19,7 +19,7 @@ struct Day4: View {
                             RoundedRectangle(cornerRadius: 31)
                                 .fill(Color.blue)).foregroundColor(.yellow)
                             .frame(width: 200, height: 25)
-                            .shadow(radius: 5).padding()
+                            .padding()
                         (Image(systemName: "sun.max").bold())
                     }
                     VStack{

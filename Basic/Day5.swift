@@ -10,7 +10,7 @@ import Combine
 
 struct Day5: View {
     
-    @State private var secondsElapsed = 0
+    @AppStorage("secondsElapsed") private var secondsElapsed = 0
     @State private var isRunning = false
     @State private var timerConnection: Cancellable?
 
@@ -20,8 +20,14 @@ struct Day5: View {
         VStack {
             Text("⏱️ Seconds Elapsed").bold()
             
-            Text("\(secondsElapsed)").font(.largeTitle).bold().padding()
+            var formattedTime: String {
+                let minutes = secondsElapsed / 60
+                let seconds = secondsElapsed % 60
+                
+                return String(format: "%02D:%02D", minutes, seconds)
+            }
             
+            Text(formattedTime).font(.system(size: 30, weight:.bold))
             
             HStack {
                 Button(isRunning ? "Pause" : "Start") {
@@ -29,8 +35,16 @@ struct Day5: View {
                         timerConnection?.cancel()
                     } else {
                         timerConnection = Counter.connect()
+                        
                     }
                     isRunning.toggle()
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button("Reset") {
+                    timerConnection?.cancel()
+                    secondsElapsed = 0
+                    isRunning = false
                 }
                 .buttonStyle(.borderedProminent)
             }
