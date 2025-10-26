@@ -7,30 +7,39 @@
 
 import SwiftUI
 
-struct Habit: View {
+struct Habit: Identifiable {
+    let id = UUID()
+    var title: String
+    var isDone: Bool
     
-    var title: String = ("")
-    var isDone: Bool = false
+}
     
-    var body: some View {
-        
-        List {
-            Text("Habit I")
-            Text("Habit II")
-            Text("Habit III")
-            Text("Habit IV")
-            Text("Habit V")
-            
-        }
-        
 
+struct HabitListView: View {
+    
+    @State private var habits = [
+        Habit(title: "Code", isDone: false),
+        Habit(title: "Gym", isDone: false),
+        Habit(title: "Meditate", isDone: false),
+        Habit(title: "Cook", isDone: false),
+        Habit(title: "Read", isDone: false),
         
-        
+    ]
+    var body: some View {
+        NavigationView {
+            List($habits) {$habits in
+                Toggle(isOn: $habits.isDone,) {
+                    Text(habits.title)
+                        .font(.headline)
+                        .foregroundColor(habits.isDone ? .yellow : .primary)
+                    
+                }
+            }
+        }.navigationTitle("My Habits")
     }
 }
 
 
-
 #Preview {
-    Habit()
+    HabitListView()
 }

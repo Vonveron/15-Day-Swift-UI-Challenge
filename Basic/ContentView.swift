@@ -116,6 +116,7 @@ struct SecondPage: View {
                     NavigationStack {
                         VStack {
                             HStack{
+                                
                                 // Make this first "ToDoList" clickable
                                 NavigationLink(destination: TodoListview()) {
                                     Text("ToDo List")
@@ -130,6 +131,10 @@ struct SecondPage: View {
                                 NavigationLink(destination: Day5()) {
                                     Text("Timer").bold()
                                         .foregroundColor(.blue)
+                                }.padding()
+                                NavigationLink(destination: HabitListView()) {
+                                    Text("List").bold()
+                                        .foregroundColor(.green)
                                 }.padding()
                                 
                             }
