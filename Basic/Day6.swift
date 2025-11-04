@@ -41,7 +41,7 @@ struct HabitListView: View {
         }
         .onAppear(perform: loadHabits)
 
-        // Reset button linked with func 
+        // Reset button linked with reset func 
         Button("Reset") {
             resetHabits()
         }
@@ -83,6 +83,12 @@ struct HabitListView: View {
             habits[index].isDone = false
         }
         saveHabits()
+    }
+    
+    private func counthabits() {
+        for index in habits.indices {
+            habits[index].isDone.description.count
+        }
     }
     
 }
