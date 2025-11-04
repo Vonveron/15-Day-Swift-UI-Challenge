@@ -25,7 +25,16 @@ struct HabitListView: View {
         Habit(id: UUID(), title: "Read", isDone: false),
     ]
     
+    var completed: Int {
+        habits.filter { $0.isDone }.count
+    }
+    
     var body: some View {
+        VStack {
+            Text("Disciplines Done: \(completed) / \(habits.count)")
+        }
+        
+        
         NavigationView {
             List($habits) { $habit in
                 Toggle(isOn: $habit.isDone) {
@@ -41,10 +50,11 @@ struct HabitListView: View {
         }
         .onAppear(perform: loadHabits)
 
-        // Reset button linked with reset func 
-        Button("Reset") {
-            resetHabits()
-        }
+        // Reset button linked with reset func
+        
+            Button("Reset") {
+                resetHabits()
+            }
         .buttonStyle(.borderedProminent)
     }
     
@@ -87,7 +97,7 @@ struct HabitListView: View {
     
     private func counthabits() {
         for index in habits.indices {
-            habits[index].isDone.description.count
+            habits[index].isDone
         }
     }
     
