@@ -38,8 +38,15 @@ struct HabitListView: View {
                 }
             }
             .navigationTitle("My Habits")
+            
+            Button("Reset") {
+                Toggle(isOn: $habits.isDone)
+            }
+            .buttonStyle(.borderedProminent)
         }
         .onAppear(perform: loadHabits)
+        
+        Text("test")
     }
     
     // Private funcs were outside the HabitlistView Struct
@@ -71,6 +78,7 @@ struct HabitListView: View {
             print("Failed to load habits: \(error)")
         }
     }
+    
 }
 
 #Preview {
