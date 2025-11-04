@@ -30,25 +30,30 @@ struct HabitListView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Disciplines Done: \(completed) / \(habits.count)")
-        }
+       
         
         
-        NavigationView {
-            List($habits) { $habit in
-                Toggle(isOn: $habit.isDone) {
-                    Text(habit.title)
-                        .font(.headline)
-                        .foregroundColor(habit.isDone ? .yellow : .primary)
+        VStack{
+            NavigationView {
+                List($habits) { $habit in
+                    Toggle(isOn: $habit.isDone) {
+                        Text(habit.title)
+                            .font(.headline)
+                            .foregroundColor(habit.isDone ? .yellow : .primary)
+                    }
+                    .onChange(of: habit.isDone) { _ in
+                        saveHabits()
+                    }
                 }
-                .onChange(of: habit.isDone) { _ in
-                    saveHabits()
-                }
+                .navigationTitle("My Disciplines")
             }
-            .navigationTitle("My Disciplines")
+            .onAppear(perform: loadHabits)
+            
+            VStack(alignment: .trailing, spacing: 75) {
+                Text("Disciplines Done: \(completed) / \(habits.count)")
+            }
         }
-        .onAppear(perform: loadHabits)
+        
 
         // Reset button linked with reset func
         
