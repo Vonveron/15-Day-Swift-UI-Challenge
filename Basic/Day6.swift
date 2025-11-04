@@ -37,16 +37,15 @@ struct HabitListView: View {
                     saveHabits()
                 }
             }
-            .navigationTitle("My Habits")
-            
-            Button("Reset") {
-                Toggle(isOn: $habits.isDone)
-            }
-            .buttonStyle(.borderedProminent)
+            .navigationTitle("My Disciplines")
         }
         .onAppear(perform: loadHabits)
-        
-        Text("test")
+
+        // Reset button linked with func 
+        Button("Reset") {
+            resetHabits()
+        }
+        .buttonStyle(.borderedProminent)
     }
     
     // Private funcs were outside the HabitlistView Struct
@@ -77,6 +76,13 @@ struct HabitListView: View {
         } catch {
             print("Failed to load habits: \(error)")
         }
+    }
+
+    private func resetHabits() {
+        for index in habits.indices {
+            habits[index].isDone = false
+        }
+        saveHabits()
     }
     
 }
