@@ -34,6 +34,9 @@ struct RandomMealGenerator: View {
     
 }
 
+private func deletemeals() {
+}
+
 #Preview {
     RandomMealGenerator()
 }
