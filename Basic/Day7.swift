@@ -7,13 +7,28 @@
 
 import SwiftUI
 
-//struct Day7: View {
-//}
+struct Meals: Identifiable {
+    let name: String
+    let id = UUID()
+}
+
+private var meals = [
+    Meals(name: "Chicken"),
+    Meals(name: "Rice"),
+    Meals(name: "Pasta"),
+    Meals(name: "Beets"),
+    Meals(name: "Pumpkin"),
+    Meals(name: "Brocoli")
+    
+]
 
 struct RandomMealGenerator: View {
     var body: some View {
         
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(meals){
+            Text($0.name)
+        }
         
     }
     
