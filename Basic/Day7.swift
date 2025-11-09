@@ -34,15 +34,14 @@ struct RandomMealGenerator: View {
             Text($0.name)
             
         }.listStyle(.automatic)
-    
+        
     }
-}
+    struct CardView: View {
+        var body: some View {
+            Image("Board").resizable().aspectRatio(contentMode: .fit)
+        }
+    }
 
-struct CardVie: View {
-    var body: some View {
-        Image("Board").resizable().aspectRatio(contentMode: .fit)
-    }
-    
 }
 
 private func deletemeals() {
