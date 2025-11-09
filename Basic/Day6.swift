@@ -30,8 +30,6 @@ struct HabitListView: View {
     }
     
     var body: some View {
-       
-        
         
         VStack{
             NavigationView {
@@ -53,8 +51,6 @@ struct HabitListView: View {
                 Text("Disciplines Done: \(completed) / \(habits.count)")
             }
         }
-        
-
         // Reset button linked with reset func
         
             Button("Reset") {
