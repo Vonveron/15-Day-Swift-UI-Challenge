@@ -28,20 +28,26 @@ struct RandomMealGenerator: View {
     var body: some View {
                     
         Text("Meal Generator").bold()
-        Image("Board").resizable().aspectRatio(contentMode: .fit)
+        Image("Salad2").resizable().aspectRatio(contentMode: .fit)
 
-        List(meals) {
+        List(meals) { 
             Text($0.name)
             
         }.listStyle(.automatic)
     
+    }
+}
+
+struct CardVie: View {
+    var body: some View {
+        Image("Board").resizable().aspectRatio(contentMode: .fit)
     }
     
 }
 
 private func deletemeals() {
     for meals in meals {
-        //meals.remove
+        
     }
 }
 
