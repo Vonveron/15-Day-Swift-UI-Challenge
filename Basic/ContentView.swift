@@ -119,7 +119,7 @@ struct SecondPage: View {
                                 
                                 // Make this first "ToDoList" clickable
                                 NavigationLink(destination: TodoListview()) {
-                                    Text("ToDo List")
+                                    Text("ToDo")
                                         .font(.headline)
                                         .foregroundColor(.red)
                                 }.padding()
@@ -132,8 +132,8 @@ struct SecondPage: View {
                                     Text("Timer").bold()
                                         .foregroundColor(.blue)
                                 }.padding()
-                                NavigationLink(destination: HabitListView()) {
-                                    Text("List").bold()
+                                NavigationLink(destination: RandomMealGenerator()) {
+                                    Text("Meal Prep").bold()
                                         .foregroundColor(.green)
                                 }.padding()
                                 
