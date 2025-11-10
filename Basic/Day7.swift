@@ -43,20 +43,22 @@ struct CardView: View {
 
 struct RandomMealGenerator: View {
     var body: some View {
-            CardView()
-            Text("Meal Generator").bold()
-        Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 350, height: 250)
+        CardView()
+        VStack {
+            Text("Salad Styles").bold()
+            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 250, height: 250)
+        }
+        .padding()
+        List(meals) {
+            Text($0.name)
             
-            List(meals) {
-                Text($0.name)
-                
-            }.listStyle(.automatic)
+        }.listStyle(.automatic)
         
         GroupBox("Groupbox Test") {
             Text("This is my groupbox: Test")
             
         }
-            
+        
     }
 }
 
