@@ -32,11 +32,13 @@ struct CardView: View {
                     NavigationLink(destination: HabitListView()) {
                         Image("Board").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     }
+                    
+                    // clipShapes, Ellipse, Capsule
                     Image("Salad2").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     Image("Salad").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     Image("Kit").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
 
-                }
+            }
         }
     }
 }
@@ -46,7 +48,7 @@ struct RandomMealGenerator: View {
         CardView()
         VStack {
             Text("Salad Styles").bold()
-            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200)
+            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(RoundedRectangle(cornerRadius: 75))
         }
         .padding()
         List(meals) { meals in
