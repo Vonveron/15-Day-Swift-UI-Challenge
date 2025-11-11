@@ -30,11 +30,11 @@ struct CardView: View {
                 Text("Menu").bold()
                 HStack {
                     NavigationLink(destination: HabitListView()) {
-                        Image("Board").resizable().aspectRatio(contentMode: .fit)
+                        Image("Board").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     }
-                    Image("Salad2").resizable().aspectRatio(contentMode: .fit)
-                    Image("Salad").resizable().aspectRatio(contentMode: .fit)
-                    Image("Kit").resizable().aspectRatio(contentMode: .fit)
+                    Image("Salad2").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
+                    Image("Salad").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
+                    Image("Kit").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
 
                 }
         }
@@ -51,7 +51,7 @@ struct RandomMealGenerator: View {
         .padding()
         List(meals) { meals in
             HStack {
-                Image("kit").resizable().aspectRatio(contentMode: .fit).frame(width: 40, height: 40)
+                Image("kit").resizable().aspectRatio(contentMode: .fit).frame(width: 40, height: 40).clipShape(Circle())
                 Text(meals.name)
             }
         }.listStyle(.automatic)
