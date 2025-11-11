@@ -46,12 +46,14 @@ struct RandomMealGenerator: View {
         CardView()
         VStack {
             Text("Salad Styles").bold()
-            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 250, height: 250)
+            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200)
         }
         .padding()
-        List(meals) {
-            Text($0.name)
-            
+        List(meals) { meals in
+            HStack {
+                Image("kit").resizable().aspectRatio(contentMode: .fit).frame(width: 40, height: 40)
+                Text(meals.name)
+            }
         }.listStyle(.automatic)
         
         GroupBox("Groupbox Test") {
