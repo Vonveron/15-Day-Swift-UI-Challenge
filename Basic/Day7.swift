@@ -37,7 +37,6 @@ struct CardView: View {
                     Image("Salad2").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     Image("Salad").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     Image("Kit").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
-
             }
         }
     }
@@ -46,22 +45,21 @@ struct CardView: View {
 struct RandomMealGenerator: View {
     var body: some View {
         CardView()
-        VStack {
-            Text("Salad Styles").bold()
-            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(RoundedRectangle(cornerRadius: 75))
-        }
-        .padding()
-        List(meals) { meals in
-            HStack {
-                Image("kit").resizable().aspectRatio(contentMode: .fit).frame(width: 40, height: 40).clipShape(Circle())
-                Text(meals.name)
-            }
-        }.listStyle(.automatic)
-        
         GroupBox("Groupbox Test") {
             Text("This is my groupbox: Test")
             
-        }
+        }.padding()
+        VStack {
+            Text("Salad Styles").bold()
+            Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(RoundedRectangle(cornerRadius: 75))
+        }.frame(width: 150, height: 150)
+        .padding()
+        List(meals) { meals in
+            HStack {
+                Image("Kit").resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50).clipShape(Circle())
+                Text(meals.name)
+            }
+        }.listStyle(.automatic)
         
     }
 }
