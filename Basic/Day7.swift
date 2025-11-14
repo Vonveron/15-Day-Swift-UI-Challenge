@@ -56,10 +56,14 @@ struct RandomMealGenerator: View {
         .padding()
         List(meals) { meals in
             HStack {
-                Image("Kit").resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50).clipShape(Circle())
+                Image("Tomatoe").resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50).clipShape(Circle())
                 Text(meals.name)
             }
         }.listStyle(.automatic)
+        
+        Button("Random Meal") {
+            Randommeal()
+        }.onTapGesture(perform: print Randommeal())
         
     }
 }
@@ -68,6 +72,11 @@ private func deletemeals() {
     for meals in meals {
         
     }
+}
+
+private func Randommeal() -> Meals {
+    meals.randomElement()!
+    
 }
 
 #Preview {
