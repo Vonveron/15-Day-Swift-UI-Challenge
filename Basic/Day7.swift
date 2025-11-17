@@ -11,6 +11,7 @@ struct Meals: Identifiable {
     let name: String
     let id = UUID()
     //let ImageResource =
+    
 }
 
 private var meals = [
@@ -60,17 +61,21 @@ struct RandomMealGenerator: View {
                 Text(meals.name)
             }
         }.listStyle(.automatic)
-        
-        Button("Random Meal") {
-            Randommeal()
-        }.onTapGesture(perform: print Randommeal())
-        
+        HStack {
+            Button("Random Meal") {
+                Randommeal()
+            }.padding()
+            
+            Button("Delete Meal") {
+                Deletemeals()
+            }.padding()
+        }
     }
 }
 
-private func deletemeals() {
+private func Deletemeals() {
     for meals in meals {
-        
+        meals.remove
     }
 }
 
