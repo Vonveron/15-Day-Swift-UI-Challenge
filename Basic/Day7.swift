@@ -14,17 +14,6 @@ struct Meals: Identifiable {
     
 }
 
-private var meals = [
-    
-    Meals(name: "Chicken"),
-    Meals(name: "Rice"),
-    Meals(name: "Pasta"),
-    Meals(name: "Beets"),
-    Meals(name: "Pumpkin"),
-    Meals(name: "Brocoli"),
-    
-]
-
 struct CardView: View {
         var body: some View {
             VStack {
@@ -44,45 +33,56 @@ struct CardView: View {
 }
 
 struct RandomMealGenerator: View {
+    
+    @State private var meals = [
+    
+    Meals(name: "Chicken"),
+    Meals(name: "Rice"),
+    Meals(name: "Pasta"),
+    Meals(name: "Beets"),
+    Meals(name: "Pumpkin"),
+    Meals(name: "Brocoli"),
+    
+]
+    
     var body: some View {
+        
         CardView()
+        
         GroupBox("Groupbox Test") {
             Text("This is my groupbox: Test")
             
         }.padding()
+       
         VStack {
             Text("Salad Styles").bold()
             Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(RoundedRectangle(cornerRadius: 75))
         }.frame(width: 150, height: 150)
         .padding()
+        
         List(meals) { meals in
             HStack {
                 Image("Tomatoe").resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50).clipShape(Circle())
                 Text(meals.name)
             }
         }.listStyle(.automatic)
+        
         HStack {
             Button("Random Meal") {
-                Randommeal()
-            }.padding()
-            
-            Button("Delete Meal") {
-                Deletemeals()
+                print(Randommeal())
             }.padding()
         }
     }
-}
-
-private func Deletemeals() {
-    for meals in meals {
-        meals.remove
+    
+    func Randommeal() -> String {
+        if let meal = meals.randomElement() {
+            return meal.name
+        }
+        return ""
     }
-}
-
-private func Randommeal() -> Meals {
-    meals.randomElement()!
     
 }
+
 
 #Preview {
     RandomMealGenerator()
