@@ -45,6 +45,9 @@ struct RandomMealGenerator: View {
     
 ]
     
+    @State private var ResultMeal: String = ""
+
+    
     var body: some View {
         
         CardView()
@@ -53,12 +56,12 @@ struct RandomMealGenerator: View {
             Text("This is my groupbox: Test")
             
         }.padding()
-       
+        
         VStack {
             Text("Salad Styles").bold()
             Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(RoundedRectangle(cornerRadius: 75))
         }.frame(width: 150, height: 150)
-        .padding()
+            .padding()
         
         List(meals) { meals in
             HStack {
@@ -68,12 +71,15 @@ struct RandomMealGenerator: View {
         }.listStyle(.automatic)
         
         HStack {
-            Button("Random Meal") {
-                print(Randommeal())
-            }.padding()
+            VStack{
+                Text(ResultMeal.isEmpty ? "Meal Prep" : ResultMeal).bold()
+                
+                Button("Random Meal") {
+                    ResultMeal = Randommeal()
+                }.padding().bold()
+            }
         }
     }
-    
     func Randommeal() -> String {
         if let meal = meals.randomElement() {
             return meal.name
