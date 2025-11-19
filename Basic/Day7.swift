@@ -46,15 +46,14 @@ struct RandomMealGenerator: View {
 ]
     
     @State private var ResultMeal: String = ""
-
+    @State private var RandomResult = false
     
     var body: some View {
         
-        CardView()
+        CardView().padding()
         
         GroupBox("Groupbox Test") {
-            Text("This is my groupbox: Test")
-            
+            //Text("This is my groupbox: Test")
         }.padding()
         
         VStack {
@@ -72,14 +71,24 @@ struct RandomMealGenerator: View {
         
         HStack {
             VStack{
-                Text(ResultMeal.isEmpty ? "Meal Prep" : ResultMeal).bold()
+                Text(ResultMeal.isEmpty ? "Random Meal Prep" : ResultMeal).bold()
                 
                 Button("Random Meal") {
                     ResultMeal = Randommeal()
-                }.padding().bold()
+                }.padding().bold().foregroundColor(Color.blue).buttonStyle(.bordered)
+
+                Button(action: {
+                    withAnimation(.easeInOut(duration: 0.4)){
+                        RandomResult.toggle()
+                    }
+                })
+                
+                Text(RandomResult = ResultMeal )
             }
         }
+        
     }
+    
     func Randommeal() -> String {
         if let meal = meals.randomElement() {
             return meal.name
