@@ -71,19 +71,32 @@ struct RandomMealGenerator: View {
         
         HStack {
             VStack{
-                Text(ResultMeal.isEmpty ? "Random Meal Prep" : ResultMeal).bold()
-                
+                Text(ResultMeal.isEmpty ? "Random Meal Prep" : ResultMeal).bold().transition(.scale).padding().background(RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.blue))
+                                
                 Button("Random Meal") {
                     ResultMeal = Randommeal()
+                    
                 }.padding().bold().foregroundColor(Color.blue).buttonStyle(.bordered)
 
-                Button(action: {
-                    withAnimation(.easeInOut(duration: 0.4)){
-                        RandomResult.toggle()
-                    }
-                })
-                
-                Text(RandomResult = ResultMeal )
+//                Button(action: {
+//                    withAnimation(.easeInOut(duration: 0.4)){
+//                        RandomResult.toggle()
+//                    }
+//                }){
+//                    Text(RandomResult ? "Hidebox" : "Showbox" )
+//                }
+//                if RandomResult {
+//                    RoundedRectangle(cornerRadius: 20)
+//                                        .fill(Color.purple)
+//                                        .frame(width: 100, height: 100)
+//                                        .transition(.asymmetric(
+//                                            insertion: .move(edge: .bottom).combined(with: .opacity),
+//                                            removal: .move(edge: .top).combined(with: .opacity)
+//                                        ))
+//                                        // Optional smoothness improvement
+//                                        .animation(.easeInOut, value: RandomResult)
+//                }
             }
         }
         
