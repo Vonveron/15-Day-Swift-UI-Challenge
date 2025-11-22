@@ -71,11 +71,13 @@ struct RandomMealGenerator: View {
         
         HStack {
             VStack{
-                Text(ResultMeal.isEmpty ? "Random Meal Prep" : ResultMeal).bold().transition(.scale).padding().background(RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.blue))
+                Text(ResultMeal.isEmpty ? "Random Meal Prep" : ResultMeal).padding().background(RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.blue)).bold()
                                 
                 Button("Random Meal") {
-                    ResultMeal = Randommeal()
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        ResultMeal = Randommeal()
+                    }
                     
                 }.padding().bold().foregroundColor(Color.blue).buttonStyle(.bordered)
 
