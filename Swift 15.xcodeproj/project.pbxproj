@@ -30,19 +30,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B76D353F2E68935B000359B6 /* Basic */ = {
+		B76D353F2E68935B000359B6 /* Swift 15 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Basic;
+			path = "Swift 15";
 			sourceTree = "<group>";
 		};
-		B76D354D2E68935D000359B6 /* BasicTests */ = {
+		B76D354D2E68935D000359B6 /* Swift 15Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BasicTests;
+			path = "Swift 15Tests";
 			sourceTree = "<group>";
 		};
-		B76D35572E68935D000359B6 /* BasicUITests */ = {
+		B76D35572E68935D000359B6 /* Swift 15UITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BasicUITests;
+			path = "Swift 15UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		B76D35342E68935B000359B6 = {
 			isa = PBXGroup;
 			children = (
-				B76D353F2E68935B000359B6 /* Basic */,
-				B76D354D2E68935D000359B6 /* BasicTests */,
-				B76D35572E68935D000359B6 /* BasicUITests */,
+				B76D353F2E68935B000359B6 /* Swift 15 */,
+				B76D354D2E68935D000359B6 /* Swift 15Tests */,
+				B76D35572E68935D000359B6 /* Swift 15UITests */,
 				B76D353E2E68935B000359B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B76D353F2E68935B000359B6 /* Basic */,
+				B76D353F2E68935B000359B6 /* Swift 15 */,
 			);
 			name = Basic;
 			packageProductDependencies = (
@@ -131,7 +131,7 @@
 				B76D354C2E68935D000359B6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B76D354D2E68935D000359B6 /* BasicTests */,
+				B76D354D2E68935D000359B6 /* Swift 15Tests */,
 			);
 			name = BasicTests;
 			packageProductDependencies = (
@@ -154,7 +154,7 @@
 				B76D35562E68935D000359B6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				B76D35572E68935D000359B6 /* BasicUITests */,
+				B76D35572E68935D000359B6 /* Swift 15UITests */,
 			);
 			name = BasicUITests;
 			packageProductDependencies = (
