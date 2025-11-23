@@ -78,7 +78,8 @@ struct RandomMealGenerator: View {
                     withAnimation(.easeInOut(duration: 0.4)) {
                         ResultMeal = Randommeal()
                     }
-                }.padding().bold().foregroundColor(Color.blue).buttonStyle(.bordered)
+                }.padding().bold().foregroundColor(Color.black).buttonStyle(.bordered)
+                
             }
         }
         
