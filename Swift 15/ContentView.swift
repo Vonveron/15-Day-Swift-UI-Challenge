@@ -48,11 +48,14 @@ struct FirstPage: View {
         
         //   var body: some View {
         VStack(spacing: 20) {
-            Text("Buisness Logo, Business Text")
+            Text("Buisness Logo")
                 .padding().font(.title.bold())
             Text(Date().formatted(date: .abbreviated, time: .complete))
-            Text("Business Slogan / Campaign")
-            Text("Busines Logo, Business Text")
+            
+            Image("Kit").resizable().scaledToFill().ignoresSafeArea()
+            
+            Text("Business  Campaign").bold()
+            Text("Menu Options / Buttons")
             
             // Cannont have one body view inside of another!!
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {

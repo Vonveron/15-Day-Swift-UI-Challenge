@@ -24,9 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B76D353D2E68935B000359B6 /* Basic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Basic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B76D354A2E68935D000359B6 /* BasicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B76D35542E68935D000359B6 /* BasicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76D353D2E68935B000359B6 /* Swift15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift15.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76D354A2E68935D000359B6 /* Swift15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift15Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76D35542E68935D000359B6 /* Swift15UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift15UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -85,9 +85,9 @@
 		B76D353E2E68935B000359B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B76D353D2E68935B000359B6 /* Basic.app */,
-				B76D354A2E68935D000359B6 /* BasicTests.xctest */,
-				B76D35542E68935D000359B6 /* BasicUITests.xctest */,
+				B76D353D2E68935B000359B6 /* Swift15.app */,
+				B76D354A2E68935D000359B6 /* Swift15Tests.xctest */,
+				B76D35542E68935D000359B6 /* Swift15UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B76D353C2E68935B000359B6 /* Basic */ = {
+		B76D353C2E68935B000359B6 /* Swift15 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B76D355E2E68935D000359B6 /* Build configuration list for PBXNativeTarget "Basic" */;
+			buildConfigurationList = B76D355E2E68935D000359B6 /* Build configuration list for PBXNativeTarget "Swift15" */;
 			buildPhases = (
 				B76D35392E68935B000359B6 /* Sources */,
 				B76D353A2E68935B000359B6 /* Frameworks */,
@@ -110,16 +110,16 @@
 			fileSystemSynchronizedGroups = (
 				B76D353F2E68935B000359B6 /* Swift 15 */,
 			);
-			name = Basic;
+			name = Swift15;
 			packageProductDependencies = (
 			);
 			productName = Basic;
-			productReference = B76D353D2E68935B000359B6 /* Basic.app */;
+			productReference = B76D353D2E68935B000359B6 /* Swift15.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B76D35492E68935D000359B6 /* BasicTests */ = {
+		B76D35492E68935D000359B6 /* Swift15Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B76D35612E68935D000359B6 /* Build configuration list for PBXNativeTarget "BasicTests" */;
+			buildConfigurationList = B76D35612E68935D000359B6 /* Build configuration list for PBXNativeTarget "Swift15Tests" */;
 			buildPhases = (
 				B76D35462E68935D000359B6 /* Sources */,
 				B76D35472E68935D000359B6 /* Frameworks */,
@@ -133,16 +133,16 @@
 			fileSystemSynchronizedGroups = (
 				B76D354D2E68935D000359B6 /* Swift 15Tests */,
 			);
-			name = BasicTests;
+			name = Swift15Tests;
 			packageProductDependencies = (
 			);
 			productName = BasicTests;
-			productReference = B76D354A2E68935D000359B6 /* BasicTests.xctest */;
+			productReference = B76D354A2E68935D000359B6 /* Swift15Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B76D35532E68935D000359B6 /* BasicUITests */ = {
+		B76D35532E68935D000359B6 /* Swift15UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B76D35642E68935D000359B6 /* Build configuration list for PBXNativeTarget "BasicUITests" */;
+			buildConfigurationList = B76D35642E68935D000359B6 /* Build configuration list for PBXNativeTarget "Swift15UITests" */;
 			buildPhases = (
 				B76D35502E68935D000359B6 /* Sources */,
 				B76D35512E68935D000359B6 /* Frameworks */,
@@ -156,11 +156,11 @@
 			fileSystemSynchronizedGroups = (
 				B76D35572E68935D000359B6 /* Swift 15UITests */,
 			);
-			name = BasicUITests;
+			name = Swift15UITests;
 			packageProductDependencies = (
 			);
 			productName = BasicUITests;
-			productReference = B76D35542E68935D000359B6 /* BasicUITests.xctest */;
+			productReference = B76D35542E68935D000359B6 /* Swift15UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B76D353C2E68935B000359B6 /* Basic */,
-				B76D35492E68935D000359B6 /* BasicTests */,
-				B76D35532E68935D000359B6 /* BasicUITests */,
+				B76D353C2E68935B000359B6 /* Swift15 */,
+				B76D35492E68935D000359B6 /* Swift15Tests */,
+				B76D35532E68935D000359B6 /* Swift15UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		B76D354C2E68935D000359B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B76D353C2E68935B000359B6 /* Basic */;
+			target = B76D353C2E68935B000359B6 /* Swift15 */;
 			targetProxy = B76D354B2E68935D000359B6 /* PBXContainerItemProxy */;
 		};
 		B76D35562E68935D000359B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B76D353C2E68935B000359B6 /* Basic */;
+			target = B76D353C2E68935B000359B6 /* Swift15 */;
 			targetProxy = B76D35552E68935D000359B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -526,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B76D355E2E68935D000359B6 /* Build configuration list for PBXNativeTarget "Basic" */ = {
+		B76D355E2E68935D000359B6 /* Build configuration list for PBXNativeTarget "Swift15" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B76D355F2E68935D000359B6 /* Debug */,
@@ -535,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B76D35612E68935D000359B6 /* Build configuration list for PBXNativeTarget "BasicTests" */ = {
+		B76D35612E68935D000359B6 /* Build configuration list for PBXNativeTarget "Swift15Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B76D35622E68935D000359B6 /* Debug */,
@@ -544,7 +544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B76D35642E68935D000359B6 /* Build configuration list for PBXNativeTarget "BasicUITests" */ = {
+		B76D35642E68935D000359B6 /* Build configuration list for PBXNativeTarget "Swift15UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B76D35652E68935D000359B6 /* Debug */,
