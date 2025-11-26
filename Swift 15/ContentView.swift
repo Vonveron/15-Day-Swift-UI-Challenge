@@ -16,7 +16,7 @@ struct ColorOption: Identifiable {
     let uiColor: UIColor  // UIKit color so we can extract RGB/HEX reliably
 }
 
-struct ContentView: View {
+struct InitialScreen: View {
     
     var body: some View {
             TabView {
@@ -52,10 +52,10 @@ struct FirstPage: View {
                 .padding().font(.title.bold())
             Text(Date().formatted(date: .abbreviated, time: .complete))
             
-            Image("Kit").resizable().scaledToFill().ignoresSafeArea()
+            Image("Kit").resizable().scaledToFill()
             
-            Text("Business  Campaign").bold()
-            Text("Menu Options / Buttons")
+            Text("Business Campaign")
+            Text("Busines Text")
             
             // Cannont have one body view inside of another!!
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
@@ -244,9 +244,11 @@ extension UIColor {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+        
+#Preview {
+        InitialScreen()
 }
+
 

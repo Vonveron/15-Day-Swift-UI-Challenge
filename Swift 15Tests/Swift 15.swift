@@ -6,9 +6,9 @@
 //
 
 import Testing
-@testable import Basic
+@testable import Swift15
 
-struct BasicTests {
+struct Swift15Tests {
 
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
