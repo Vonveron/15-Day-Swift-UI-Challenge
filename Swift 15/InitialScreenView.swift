@@ -103,16 +103,15 @@ struct SecondPage: View {
             ScrollView {
                 VStack(spacing: 20) {
                     // Header
-                    VStack(alignment: .leading, spacing: 6) {
+                    VStack(alignment: .center, spacing: 7) {
                         Text(" Business Logo").font(.title.bold())
 
-                        Text("Business Title, Business Text")
-                            .font(.title.bold())
+                        Text("Business Text").font(.title.bold())
+                        
                         Text(Date().formatted(date: .abbreviated, time: .complete))
-                            .font(.subheadline)
-                        Text("Business Slogan / Campaign")
-                            .font(.headline)
-                        Divider()
+                            .font(.subheadline).bold()
+                        
+                        Text("Campaign").font(.headline)
                     }
                     .padding(.horizontal)
                     
