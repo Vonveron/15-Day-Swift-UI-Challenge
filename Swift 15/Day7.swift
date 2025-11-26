@@ -52,10 +52,6 @@ struct RandomMealGenerator: View {
         
         CardView().padding()
         
-        GroupBox("Groupbox Test") {
-            //Text("This is my groupbox: Test")
-        }.padding()
-        
         VStack {
             Text("Salad Styles").bold()
             Image("Salad2").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(RoundedRectangle(cornerRadius: 75))
