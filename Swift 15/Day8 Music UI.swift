@@ -7,14 +7,28 @@
 
 import SwiftUI
 
+//struct MusicDetails: Identifiable {
+//    
+//    let Artist: String
+//    let SongTitle: String
+//    
+//}
+
 struct Day8_Music_UI: View {
+    
+    @State private var progress1: Double = 0.5
+    
     var body: some View {
         
         
         GroupBox("Groupbox Title Test") {
             
-            Image("808").resizable().scaledToFit().frame(width: 150, height: 150, alignment: .leading)
-            Text("Song Title")
+            Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
+            Text("Song Title").bold()
+            Text("Artist: Kanye West").bold()
+            
+            ProgressView(value: progress1).progressViewStyle(.linear)
+
 
         }.padding()
     }
