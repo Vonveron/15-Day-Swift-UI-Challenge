@@ -22,14 +22,27 @@ struct Day8_Music_UI: View {
         
         
         GroupBox("Groupbox Title Test") {
-            
-            Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
-            Text("Song Title").bold()
-            Text("Artist: Kanye West").bold()
-            
-            ProgressView(value: progress1).progressViewStyle(.linear)
-
-
+            VStack(alignment: .leading) {
+                Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
+                Text("Song Title").bold()
+                Text("Artist: Kanye West").bold()
+            }
+            VStack(alignment: .leading) {
+                
+                ProgressView(value: progress1).progressViewStyle(.linear).padding()
+                
+                Slider(value: $progress1, in: 0...10) {
+                } minimumValueLabel: {
+                    Text("0")
+                } maximumValueLabel: {
+                    Text("11")
+                } onEditingChanged: { editing in
+                    print("Editing: \(editing)")
+                }
+                Text("Volume")//.font(.caption)
+                
+                
+            }
         }.padding()
     }
 }
