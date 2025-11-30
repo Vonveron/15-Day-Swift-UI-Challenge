@@ -21,11 +21,14 @@ struct Day8_Music_UI: View {
     var body: some View {
         
         
-        GroupBox("Groupbox Title Test") {
+        GroupBox() {
+        
             VStack(alignment: .leading) {
+                Label("Now Playing", systemImage: "music.note")
+
                 Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
-                Text("Song Title").bold()
-                Text("Artist: Kanye West").bold()
+                Text("Song Title:").bold()
+                Text("Artist: Kanye West").font(.footnote)
             }
             VStack(alignment: .leading) {
                 
@@ -39,14 +42,50 @@ struct Day8_Music_UI: View {
                 } onEditingChanged: { editing in
                     print("Editing: \(editing)")
                 }
-                Text("Volume")//.font(.caption)
+                Text("Volume").font(.footnote)
                 
                 
             }
         }.padding()
+        
+            GroupBox() {
+                MusicUI()
+        }
     }
 }
 
 #Preview {
     Day8_Music_UI()
+}
+
+struct MusicUI: View {
+    
+    @State private var progress1: Double = 0.5
+
+    
+    var body: some View{
+        
+        VStack {
+            RoundedRectangle(cornerRadius: 7)
+                .frame(width: 150, height: 150)
+                .foregroundColor(.yellow)
+            
+            VStack(alignment: .leading) {
+                Text("Song Title:").font(.headline.bold())
+                Text("Artist: Kanye West").font(.footnote)
+                
+                ProgressView(value: progress1).progressViewStyle(.linear).padding()
+            }
+            
+            HStack{
+
+                Image(systemName: "backward.fill")
+                Image(systemName: "pause.fill")
+                Image(systemName: "forward.fill")
+                
+            }.bold()
+        }
+        
+    }
+    
 }
