@@ -22,19 +22,21 @@ struct Day8_Music_UI: View {
         
         
         GroupBox() {
-        
-            VStack(alignment: .leading) {
-                Label("Now Playing", systemImage: "music.note")
+            
+                VStack(alignment: .leading) {
+                    Label("Now Playing", systemImage: "music.note")
 
-                Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
-                Text("Song Title:").bold()
-                Text("Artist: Kanye West").font(.footnote)
-            }
+                    Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
+                    Text("Song Title:").bold()
+                    Text("Artist: Kanye West").font(.footnote)
+                }
+            
+            
             VStack(alignment: .leading) {
                 
                 ProgressView(value: progress1).progressViewStyle(.linear).padding()
                 
-                Slider(value: $progress1, in: 0...10) {
+                Slider(value: $progress1, in: 0...11) {
                 } minimumValueLabel: {
                     Text("0")
                 } maximumValueLabel: {
@@ -44,9 +46,15 @@ struct Day8_Music_UI: View {
                 }
                 Text("Volume").font(.footnote)
                 
-                
             }
-        }.padding()
+                HStack{
+                    
+                    Image(systemName: "backward.fill")
+                    Image(systemName: "playpause.fill")
+                    Image(systemName: "forward.fill")
+                    
+                }.bold()
+        }.padding()//.background(.gradient)
         
             GroupBox() {
                 MusicUI()
