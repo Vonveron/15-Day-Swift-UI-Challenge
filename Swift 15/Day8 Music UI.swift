@@ -23,13 +23,13 @@ struct Day8_Music_UI: View {
         
         GroupBox() {
             
-                VStack(alignment: .leading) {
-                    Label("Now Playing", systemImage: "music.note")
-
-                    Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
-                    Text("Song Title:").bold()
-                    Text("Artist: Kanye West").font(.footnote)
-                }
+            VStack(alignment: .leading) {
+                Label("Now Playing", systemImage: "music.note")
+                
+                Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
+                Text("Song Title:").bold()
+                Text("Artist: Kanye West").font(.footnote)
+            }
             
             
             VStack(alignment: .leading) {
@@ -47,18 +47,18 @@ struct Day8_Music_UI: View {
                 Text("Volume").font(.footnote)
                 
             }
-                HStack{
-                    
-                    Image(systemName: "backward.fill")
-                    Image(systemName: "playpause.fill")
-                    Image(systemName: "forward.fill")
-                    
-                }.bold()
-        }.padding()//.background(.gradient)
-        
+            HStack{
+                
+                Image(systemName: "backward.fill")
+                Image(systemName: "playpause.fill")
+                Image(systemName: "forward.fill")
+                
+            }.bold()
+        }.padding().background(LinearGradient( colors: [.yellow, .green], startPoint: .topLeading, endPoint: .bottomTrailing ) )
+    
             GroupBox() {
                 MusicUI()
-        }
+            }.padding()
     }
 }
 
@@ -77,7 +77,7 @@ struct MusicUI: View {
             RoundedRectangle(cornerRadius: 7)
                 .frame(width: 150, height: 150)
                 .foregroundColor(.yellow)
-            
+        
             VStack(alignment: .leading) {
                 Text("Song Title:").font(.headline.bold())
                 Text("Artist: Kanye West").font(.footnote)
