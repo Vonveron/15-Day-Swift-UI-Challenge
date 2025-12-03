@@ -19,7 +19,8 @@ struct ColorOption: Identifiable {
 struct InitialScreen: View {
     
     var body: some View {
-            TabView {
+        
+                TabView {
                 FirstPage()
                     .tabItem {
                         Label("Page 1", systemImage: "1.circle")
@@ -29,9 +30,10 @@ struct InitialScreen: View {
                     .tabItem {
                         Label("Page 2", systemImage: "2.circle")
                     }
+                    
             }
             // Make it swipeable instead of tab bar
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
     }
 
@@ -57,29 +59,7 @@ struct FirstPage: View {
             Text("Business Campaign")
             Text("Busines Text")
             
-            // Cannont have one body view inside of another!!
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]) {
-                
-                List(Options, id: \.self) { option in
-                    ForEach(Options, id: \.self) { option in
-                        Rectangle()
-                            .fill(option)
-                            .frame(width: 90, height: 80)
-                            .padding()
-                        // Cannont have one body view inside of another!!
-                        
-                        List(products, id: \.self) { fruit in
-                            Text(fruit)
-                        }
-                        .frame(height: 200)
-                        
-                        List(country, id: \.self) { fruit in
-                            Text(fruit)
-                        }
-                        .frame(height: 200)
-                    }
-                }
-            }
+            FirstMenu().frame(alignment: .center)
         }
     }
 }
@@ -251,3 +231,21 @@ extension UIColor {
 }
 
 
+struct FirstMenu: View {
+    var body: some View {
+        NavigationStack {
+            Text("Menu")
+                .navigationTitle("Menu")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            NavigationLink("Day 2", destination: TodoListview())
+                        } label: {
+                            Image(systemName: "ellipsis.circle")
+                                .font(.title2)
+                        }
+                    }
+                }
+        }
+    }
+}

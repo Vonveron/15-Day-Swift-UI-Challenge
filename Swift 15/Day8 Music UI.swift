@@ -54,7 +54,7 @@ struct Day8_Music_UI: View {
                 Image(systemName: "forward.fill")
                 
             }.bold()
-        }.padding().background(LinearGradient( colors: [.yellow, .green], startPoint: .topLeading, endPoint: .bottomTrailing ) )
+        }.padding().background(LinearGradient( colors: [.yellow, .green], startPoint: .topLeading, endPoint: .bottomTrailing ))
     
             GroupBox() {
                 MusicUI()
@@ -97,3 +97,5 @@ struct MusicUI: View {
     }
     
 }
+
+
