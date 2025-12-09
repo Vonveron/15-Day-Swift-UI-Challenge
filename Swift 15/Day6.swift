@@ -15,7 +15,7 @@ struct Habit: Identifiable, Codable {
     var isDone: Bool
 }
 
-struct HabitListView: View {
+struct Day6: View {
     @AppStorage("habitsData") private var habitsData: Data = Data()
     @State private var habits: [Habit] = [
         Habit(id: UUID(), title: "Code", isDone: false),
@@ -105,5 +105,5 @@ struct HabitListView: View {
 }
 
 #Preview {
-    HabitListView()
+    Day6()
 }

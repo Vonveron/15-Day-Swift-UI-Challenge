@@ -19,7 +19,7 @@ struct CardView: View {
             VStack {
                 Text("Menu").bold()
                 HStack {
-                    NavigationLink(destination: HabitListView()) {
+                    NavigationLink(destination: Day6()) {
                         Image("Board").resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
                     }
                     
@@ -32,7 +32,7 @@ struct CardView: View {
     }
 }
 
-struct RandomMealGenerator: View {
+struct Day7: View {
     
     @State private var meals = [
     
@@ -92,5 +92,5 @@ struct RandomMealGenerator: View {
 
 
 #Preview {
-    RandomMealGenerator()
+    Day7()
 }

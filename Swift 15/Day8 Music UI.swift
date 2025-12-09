@@ -14,7 +14,7 @@ import SwiftUI
 //    
 //}
 
-struct Day8_Music_UI: View {
+struct Day8: View {
     
     @State private var progress1: Double = 0.5
     
@@ -63,7 +63,7 @@ struct Day8_Music_UI: View {
 }
 
 #Preview {
-    Day8_Music_UI()
+    Day8()
 }
 
 struct MusicUI: View {

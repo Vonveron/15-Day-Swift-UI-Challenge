@@ -80,7 +80,52 @@ struct SecondPage: View {
     var body: some View {
         NavigationStack {                         // iOS 16+: replace with NavigationView if needed
             ScrollView {
+                NavigationStack {
+                    Text("")
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Menu {
+                                    NavigationLink(destination: Day3()) {
+                                        Text("ToDo List")
+                                            .font(.headline)
+                                            .foregroundColor(.red)
+                                    }.padding()
+                                    
+                                    NavigationLink(destination: Day4()) {
+                                        Text("Weather").bold()
+                                            .foregroundColor(.green)
+                                    }.padding()
+                                    
+                                    NavigationLink(destination: Day5()) {
+                                        Text("Timer").bold()
+                                            .foregroundColor(.blue)
+                                    }.padding()
+                                    
+                                    NavigationLink(destination: Day6()) {
+                                        Text("Check List").bold()
+                                            .foregroundColor(.green)
+                                    }.padding()
+                                    
+                                    NavigationLink(destination: Day7()) {
+                                        Text("Meal Prep").bold()
+                                            .foregroundColor(.green)
+                                    }.padding()
+                                    
+                                    NavigationLink(destination: Day8()) {
+                                        Text("Music UI").bold()
+                                            .foregroundColor(.green)
+                                    }.padding()
+//
+                                } label: {
+                                    Image(systemName: "sidebar.right")
+                                        .font(.title2)
+                                }
+                            }
+                        }
+                }
+                
                 VStack(alignment: .leading, spacing: 20) {
+                    
                     
                     Text(Date().formatted(date: .abbreviated, time: .complete))
                         .font(.footnote).bold()
@@ -89,36 +134,7 @@ struct SecondPage: View {
                     Text("Business Text").font(.title.bold())
                     
                     Text("Campaign").font(.headline)
-                    
-                    NavigationStack {
-                        VStack {
-                            HStack{
-                                
-                                // Make this first "ToDoList" clickable
-                                NavigationLink(destination: TodoListview()) {
-                                    Text("ToDo")
-                                        .font(.headline)
-                                        .foregroundColor(.red)
-                                }.padding()
-                                
-                                NavigationLink(destination: Day4()) {
-                                    Text("Weather").bold()
-                                        .foregroundColor(.green)
-                                }.padding()
-                                NavigationLink(destination: Day5()) {
-                                    Text("Timer").bold()
-                                        .foregroundColor(.blue)
-                                }.padding()
-                                NavigationLink(destination: RandomMealGenerator()) {
-                                    Text("Meal Prep").bold()
-                                        .foregroundColor(.green)
-                                }.padding()
-                                
-                            }
-                        }
-                        .navigationTitle("") // keep system nav title empty
-                    }
-                    
+
                     // Grid of color tiles (2 columns)
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(colorOptions) { option in
@@ -225,6 +241,8 @@ extension UIColor {
         InitialScreen()
 }
 
+func TodoListView() {}
+
 
 struct FirstMenu: View {
     var body: some View {
@@ -234,7 +252,7 @@ struct FirstMenu: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
-                            NavigationLink("Day 2", destination: TodoListview())
+                            NavigationLink("Day 2", destination: Day3())
                         } label: {
                             Image(systemName: "ellipsis.circle")
                                 .font(.title2)

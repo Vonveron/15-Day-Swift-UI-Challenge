@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TodoListview: View {
+struct Day3: View {
     // 1. State to store the current text input
     @State private var tasks: [String] = UserDefaults.standard.stringArray(forKey: "tasks") ?? []
     // 2. State to store the list of tasks
@@ -55,5 +55,5 @@ struct TodoListview: View {
     }
 }
 #Preview {
-    TodoListview()
+    Day3()
 }
