@@ -59,7 +59,6 @@ struct FirstPage: View {
             Text("Business Campaign")
             Text("Busines Text")
             
-            FirstMenu().frame(alignment: .center)
         }
     }
 }
@@ -81,19 +80,15 @@ struct SecondPage: View {
     var body: some View {
         NavigationStack {                         // iOS 16+: replace with NavigationView if needed
             ScrollView {
-                VStack(spacing: 20) {
-                    // Header
-                    VStack(alignment: .center, spacing: 7) {
-                        Text(" Business Logo").font(.title.bold())
-
-                        Text("Business Text").font(.title.bold())
-                        
-                        Text(Date().formatted(date: .abbreviated, time: .complete))
-                            .font(.subheadline).bold()
-                        
-                        Text("Campaign").font(.headline)
-                    }
-                    .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 20) {
+                    
+                    Text(Date().formatted(date: .abbreviated, time: .complete))
+                        .font(.footnote).bold()
+                    
+                    Text("Business Logo").font(.title.bold())
+                    Text("Business Text").font(.title.bold())
+                    
+                    Text("Campaign").font(.headline)
                     
                     NavigationStack {
                         VStack {
