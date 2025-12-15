@@ -113,6 +113,11 @@ struct SecondPage: View {
                         Text("Music UI").bold()
                             .foregroundColor(.green)
                     }.padding()
+                    
+                    NavigationLink(destination: Day9()) {
+                        Text("Notes").bold()
+                            .foregroundColor(.green)
+                    }.padding()
                     //
                 }  label: {
                     Image(systemName: "sidebar.right")
