@@ -14,6 +14,7 @@ struct Note: Identifiable, Codable {
 }
 
 struct NoteDetailView: View {
+    
     @Binding var note: Note
 
         var body: some View {
@@ -31,12 +32,9 @@ struct Day9: View {
     var body: some View {
         NavigationStack {
             List($note)  { note in
-                NavigationLink(note.title) {
-                    NoteDetailView(note: $note)
+                NavigationLink(note.wrappedValue.title) {
+                    NoteDetailView(note: note)
                 }
-                TextEditor(text: $note.content)
-                    .padding()
-                    .navigationTitle(note.title)
             }
         }
     }
