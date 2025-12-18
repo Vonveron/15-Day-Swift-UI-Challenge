@@ -25,14 +25,12 @@ struct NoteDetailView: View {
 }
 
 struct Day9: View {
-    
-    @Binding var note: Note
-    
-    @State private var note1: [Note] = [Note(id: UUID(), title: "First Note Test", content: "World") ]
+        
+    @State private var note: [Note] = [Note(id: UUID(), title: "First Note Test", content: "World") ]
     
     var body: some View {
         NavigationStack {
-            List($note1)  { note1 in
+            List($note)  { note in
                 NavigationLink(note.title) {
                     NoteDetailView(note: $note)
                 }
@@ -42,8 +40,8 @@ struct Day9: View {
             }
         }
     }
-    
 }
+
 #Preview {
     Day9()
 }
