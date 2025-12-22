@@ -26,7 +26,7 @@ struct NoteDetailView: View {
 }
 
 struct Day9: View {
-        
+    
     @State private var note: [Note] = [Note(id: UUID(), title: "First Note Test", content: "World") ]
     
     var body: some View {
@@ -34,6 +34,19 @@ struct Day9: View {
             List($note)  { note in
                 NavigationLink(note.wrappedValue.title) {
                     NoteDetailView(note: note)
+                    Text(note.wrappedValue.content.isEmpty ? "Empty Note" : note.wrappedValue.content)
+                        .lineLimit(1)
+                }
+            }
+            .toolbar {
+                Button("Add") {
+                    note.append(
+                        Note(
+                            id: UUID(),
+                            title: Text(note.wrappedValue.content.isEmpty ? "Empty Note" : note.wrappedValue.content),
+                            content: "",
+                        )
+                    )
                 }
             }
         }
