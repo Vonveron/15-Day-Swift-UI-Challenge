@@ -21,9 +21,14 @@ struct Day10: View {
                 Text("You entered: \(secondsValue) seconds")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                
             }
+            
         }.padding()
+        Button("Start Countdown") {
+            
+            
+        }.font(.title2).background(RoundedRectangle(cornerRadius: 30)
+            .fill(Color.blue)).foregroundColor(.yellow).frame(width: 200, height: 25)
     }
 }
 

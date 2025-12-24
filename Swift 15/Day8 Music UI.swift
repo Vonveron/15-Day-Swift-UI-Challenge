@@ -23,16 +23,12 @@ struct Day8: View {
         
         GroupBox() {
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Label("Now Playing", systemImage: "music.note")
                 
-                Image("808").resizable().scaledToFit().frame(width: 75, height: 75, alignment: .leading)
-                Text("Song Title:").bold()
+                Image("808").resizable().scaledToFit().frame(width: 150, height: 150, alignment: .leading)
+                Text("Song Title: Winter").bold()
                 Text("Artist: Kanye West").font(.footnote)
-            }
-            
-            
-            VStack(alignment: .leading) {
                 
                 ProgressView(value: progress1).progressViewStyle(.linear).padding()
                 
@@ -45,8 +41,8 @@ struct Day8: View {
                     print("Editing: \(editing)")
                 }
                 Text("Volume").font(.footnote)
-                
             }
+            
             HStack{
                 
                 Image(systemName: "backward.fill")
@@ -55,10 +51,8 @@ struct Day8: View {
                 
             }.bold()
         }.padding().background(LinearGradient( colors: [.yellow, .green], startPoint: .topLeading, endPoint: .bottomTrailing ))
-    
-            GroupBox() {
-                MusicUI()
-            }.padding()
+        
+        //        MusicUI().padding()
     }
 }
 
@@ -66,36 +60,39 @@ struct Day8: View {
     Day8()
 }
 
-struct MusicUI: View {
-    
-    @State private var progress1: Double = 0.5
-
-    
-    var body: some View{
-        
-        VStack {
-            RoundedRectangle(cornerRadius: 7)
-                .frame(width: 150, height: 150)
-                .foregroundColor(.yellow)
-        
-            VStack(alignment: .leading) {
-                Text("Song Title:").font(.headline.bold())
-                Text("Artist: Kanye West").font(.footnote)
-                
-                ProgressView(value: progress1).progressViewStyle(.linear).padding()
-            }
-            
-            HStack{
-
-                Image(systemName: "backward.fill")
-                Image(systemName: "pause.fill")
-                Image(systemName: "forward.fill")
-                
-            }.bold()
-        }
-        
-    }
-    
-}
+//struct MusicUI: View {
+//    
+//    @State private var progress1: Double = 0.5
+//
+//    
+//    var body: some View{
+//        
+//        
+//        GroupBox() {
+//            VStack {
+//                Image("808").resizable().scaledToFit().frame(width: 150, height: 150, alignment: .leading)
+//                //            RoundedRectangle(cornerRadius: 7)
+//                //                .frame(width: 150, height: 150)
+//                //                .foregroundColor(.yellow)
+//                
+//                VStack(alignment: .leading) {
+//                    Text("Song Title:").font(.headline.bold())
+//                    Text("Artist: Kanye West").font(.footnote)
+//                    
+//                    ProgressView(value: progress1).progressViewStyle(.linear).padding()
+//                }
+//                
+//                HStack{
+//                    
+//                    Image(systemName: "backward.fill")
+//                    Image(systemName: "pause.fill")
+//                    Image(systemName: "forward.fill")
+//                    
+//                }.bold()
+//            }
+//        }.padding().background(LinearGradient( colors: [.yellow, .green], startPoint: .topLeading, endPoint: .bottomTrailing ))
+//    }
+//    
+//}
 
 
