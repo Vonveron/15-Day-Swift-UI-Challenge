@@ -43,7 +43,7 @@ struct Day9: View {
                     note.append(
                         Note(
                             id: UUID(),
-                            title: Text(note.wrappedValue.content.isEmpty ? "Empty Note" : note.wrappedValue.content),
+                            title: "",
                             content: "",
                         )
                     )

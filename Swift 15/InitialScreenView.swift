@@ -118,6 +118,11 @@ struct SecondPage: View {
                         Text("Notes").bold()
                             .foregroundColor(.green)
                     }.padding()
+                    
+                    NavigationLink(destination: Day10()) {
+                        Text("Countdown").bold()
+                            .foregroundColor(.green)
+                    }.padding()
                     //
                 }  label: {
                     Image(systemName: "sidebar.right")
