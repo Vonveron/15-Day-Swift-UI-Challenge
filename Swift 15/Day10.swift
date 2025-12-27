@@ -13,7 +13,9 @@ struct Day10: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            TextField("Enter Seconds", text: $seconds)
+            TextField("Enter Seconds", text: $seconds, ) {
+                seconds.startIndex
+            }
                 .keyboardType(.numberPad)
                 .textFieldStyle(.roundedBorder)
             
@@ -25,7 +27,12 @@ struct Day10: View {
             
         }.padding()
         Button("Start Countdown") {
-            
+            if seconds.isEmpty {
+                
+            } else {
+                seconds.index(after: seconds.startIndex)
+                
+            }
             
         }.font(.title2).background(RoundedRectangle(cornerRadius: 30)
             .fill(Color.blue)).foregroundColor(.yellow).frame(width: 200, height: 25)
